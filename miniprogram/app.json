@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/home/home",
+    "pages/index/index",
     "pages/food/food",
     "pages/food2/food2",
     "pages/address/address",
@@ -24,8 +24,8 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/home/home",
-        "text": "主页",
+        "pagePath": "pages/food2/food2",
+        "text": "点餐",
         "iconPath": "icons/zhuye_close.png",
         "selectedIconPath": "icons/zhuye_on.png"
       },
