@@ -6,7 +6,7 @@ Page({
   getUserProfile() {
     wx.getUserProfile({
       lang: 'zh_CN',
-      desc: '请授权登录Ecoffee', 
+      desc: '请授权登录Ecoffee',
       success: (res) => {
         //console.log("获取用户信息成功", res)
         let user = res.userInfo
@@ -31,29 +31,29 @@ Page({
     let temp2 = wx.getStorageSync('user');
     //if(!app.globalData.address)
     // {
-      wx.showActionSheet({
-        itemList: ["堂食","外带"],
-        success (res) {
-          console.log(res.tapIndex);
-          if(res.tapIndex === 0){
-            app.globalData.address = "堂食";
-          }else if(res.tapIndex === 1){
-            app.globalData.address = "外带";
-          }
-          if(!temp2){
-            that.getUserProfile();
-          }
-          wx.navigateTo({
-            url: that.jump()
-          })
-          },
-          fail (res) {
-          console.log(res.errMsg)
-          }
-      })
+    wx.showActionSheet({
+      itemList: ["堂食", "外带"],
+      success(res) {
+        console.log(res.tapIndex);
+        if (res.tapIndex === 0) {
+          app.globalData.address = "堂食";
+        } else if (res.tapIndex === 1) {
+          app.globalData.address = "外带";
+        }
+        if (!temp2) {
+          that.getUserProfile();
+        }
+        wx.navigateTo({
+          url: that.jump()
+        })
+      },
+      fail(res) {
+        console.log(res.errMsg)
+      }
+    })
     // }
   },
   jump() {
-      return '/pages/diancan/diancan'
+    return '/pages/diancan/diancan'
   },
 })

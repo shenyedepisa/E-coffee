@@ -7,10 +7,17 @@ Page({
     navbar: ["待制作", "待取餐", "已完成", "已取消"],
     // 默认选中菜单
     list: [],
-    currentTab:0,
+    currentTab: 0,
   },
   //顶部tab切换
   navbarTap: function (e) {
+    wx.showLoading({
+      title: 'Loading',
+      mask: 'true'
+    })
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 700)
     let index = e.currentTarget.dataset.idx;
     this.setData({
       currentTab: index
@@ -21,7 +28,7 @@ Page({
       orderStatus = 1;
     } else if (index == 2) {
       orderStatus = 2;
-    }else if (index == 3) {
+    } else if (index == 3) {
       orderStatus = -1;
     } else {
       orderStatus = 0;
@@ -33,32 +40,32 @@ Page({
     this.getMyOrderList();
     //console.log("nooooo:  "+orderStatus)
     let that = this;
-    setInterval(()=>{
+    setInterval(() => {
       that.getMyOrderList();
-    },3000);
+    }, 3000);
   },
 
- //加菜
+  //加菜
   addOrder() {
     wx.navigateTo({
       url: '/pages/diancan/diancan'
     })
-},
+  },
 
   getMyOrderList() {
     let openid = app._checkOpenid();
     //console.log('openid',openid);
     if (!openid) {
       this.setData({
-        list : []
-      }) 
+        list: []
+      })
       return;
     }
     let tempUser = wx.getStorageSync('user');
-    if(!tempUser){
+    if (!tempUser) {
       this.setData({
-        list : []
-      }) 
+        list: []
+      })
       return;
     }
     wx.cloud.callFunction({
@@ -84,7 +91,7 @@ Page({
     wx.showModal({
       title: '提示',
       content: '订单即将开始制作...\r\n确定要取消订单吗',
-      success (res) {
+      success(res) {
         if (res.confirm) {
           let orderId = event.currentTarget.dataset.orderid;
           //console.log("orderID"+orderId)
@@ -94,8 +101,8 @@ Page({
             }
           }).then(res => {
             wx.showToast({
-              mask:true,
-              icon:"none",
+              mask: true,
+              icon: "none",
               title: '订单已取消',
             })
             that.getMyOrderList();
@@ -109,15 +116,15 @@ Page({
         }
       }
     })
-    
+
   },
   //刷新
-  onRefresh(){
+  onRefresh() {
     //在当前页面显示导航条加载动画
-    wx.showNavigationBarLoading(); 
+    wx.showNavigationBarLoading();
     //显示 loading 提示框。需主动调用 wx.hideLoading 才能关闭提示框
     wx.showLoading({
-      mask:true,
+      mask: true,
       title: '刷新中...',
     })
     this.onShow();
@@ -134,10 +141,10 @@ Page({
   },
 
   /**
-    * 页面相关事件处理函数--监听用户下拉动作
-  */
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
   onPullDownRefresh: function () {
-      //调用刷新时将执行的方法
+    //调用刷新时将执行的方法
     this.onRefresh();
   }
 })

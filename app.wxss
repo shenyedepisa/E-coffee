@@ -4,6 +4,7 @@
   flex-direction: column;
   min-height: 100%;
 }
+
 /*个人中心的条目布局,全局统一布局  */
 .my_item {
   display: flex;
@@ -11,23 +12,28 @@
   align-items: center;
   margin: 0rpx 30rpx;
   padding: 30rpx;
-  padding-left: 45rpx ;
+  padding-left: 45rpx;
   background: white;
   border-bottom: 1px solid gainsboro;
 }
+
 .line_15px {
   height: 15px;
 }
+
 .line_8pt {
   height: 8pt;
 }
+
 .line_8px {
   height: 8px;
 }
+
 .line_1px {
   height: 1px;
   background: gainsboro
 }
+
 .right_arrow {
   border: solid black;
   border-width: 0 3px 3px 0;

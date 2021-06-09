@@ -7,7 +7,7 @@
 </view>
 <!--如果用户没有授权，显示登陆按钮  -->
 <view wx:if="{{!isShowUserName}}" class="btn-login">
-	<button  bindtap="getUserProfile">授权登陆</button>
+	<button bindtap="getUserProfile">授权登陆</button>
 </view>
 
 <view class='line_15px' />

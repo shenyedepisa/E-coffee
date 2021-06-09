@@ -13,9 +13,11 @@ page {
 .line_1px {
   background-color: white;
 }
-.textBottom5px{
+
+.textBottom5px {
   margin-bottom: 5px;
 }
+
 .item_root {
   background: #ffffff;
   padding: 8px 10px;

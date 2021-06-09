@@ -7,7 +7,7 @@ page {
   z-index: 10;
   height: 80rpx;
   width: 100%;
-  position:fixed;
+  position: fixed;
   top: 0rpx;
   display: flex;
   background: #fff;
@@ -72,6 +72,7 @@ page {
   font-size: 28rpx;
   border-bottom: 1rpx solid #d4d4d4;
 }
+
 .dibuttxt {
   /* 订单编号 */
   padding: 15rpx 20rpx;
@@ -138,11 +139,11 @@ page {
   line-height: 56rpx;
 }
 
-.button{
+.button {
   width: 100%;
   background: white;
   text-align: center;
-  border:none;
+  border: none;
   padding: 0px;
   margin: 0px;
   display: inline;
@@ -152,16 +153,17 @@ page {
   color: darkgoldenrod;
 }
 
-.button::after{
+.button::after {
   border: none;
   border-radius: 0;
 }
-.text1{
+
+.text1 {
   font-size: 30rpx;
-   text-align: center;
+  text-align: center;
 }
 
-.waiceng{
+.waiceng {
   padding: 10rpx;
   padding-top: 74rpx;
 }

@@ -35,6 +35,6 @@ page {
   font-size: 42rpx;
 }
 
-.textLine{
+.textLine {
   font-size: 32rpx;
 }

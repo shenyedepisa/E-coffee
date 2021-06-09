@@ -1,48 +1,46 @@
 <!--pages/manager/manager.wxml-->
 <view class="navbar">
-	<view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique"
-		bindtap="navbarTap">
-		<text class="navbarText">{{item}}</text>
-	</view>
+  <view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique"
+    bindtap="navbarTap">
+    <text class="navbarText">{{item}}</text>
+  </view>
 </view>
 <view wx:if="{{currentTab==0}}" class="caipin">
-  <view  wx:if="{{foodList.length>0}}">
+  <view wx:if="{{foodList.length>0}}">
     <block wx:for="{{foodList}}" wx:key="index">
-          <view class="caipin_item" >
-              <image class="cai_img" src="{{item.icon}}" />
-              <view class="cai_root2">
-                  <view class="cai_title" data-index="{{index}}">{{item.name}}</view>
-                  <view class="cai_sell">分类：{{item.fenlei}}</view>
-                  <view class="cai_sell">销量：{{item.sell}} </view>
-              </view>
-              <view class='coent_list'>
-                <label class='dingdanbtn' data-id='{{item._id}}'
-                  bindtap='changeStatus'>下架</label>
-              </view>
-          </view>
-      </block>
+      <view class="caipin_item">
+        <image class="cai_img" src="{{item.icon}}" />
+        <view class="cai_root2">
+          <view class="cai_title" data-index="{{index}}">{{item.name}}</view>
+          <view class="cai_sell">分类：{{item.fenlei}}</view>
+          <view class="cai_sell">销量：{{item.sell}} </view>
+        </view>
+        <view class='coent_list'>
+          <label class='dingdanbtn' data-id='{{item._id}}' bindtap='changeStatus'>下架</label>
+        </view>
+      </view>
+    </block>
   </view>
   <view wx:if="{{foodList.length==0}}" style="margin-top:90rpx;text-align: center;">
     <label class='none_tab'>数据为空</label>
-  </view> 
+  </view>
   <view class="line_15px"></view>
 </view>
 <view wx:if="{{currentTab==1}}" class="caipin">
   <view wx:if="{{foodList.length>0}}">
     <block wx:for="{{foodList}}" wx:key="index">
-          <view class="caipin_item" >
-              <image class="cai_img" src="{{item.icon}}" />
-              <view class="cai_root2">
-                  <view class="cai_title" data-index="{{index}}">{{item.name}}</view>
-                  <view class="cai_sell">分类：{{item.fenlei}}</view>
-                  <view class="cai_sell">销量：{{item.sell}} </view>
-              </view>
-              <view class='coent_list'>
-                <label class='dingdanbtn' data-id='{{item._id}}'
-                  bindtap='changeStatus'>上架</label>
-              </view>
-          </view>
-      </block>
+      <view class="caipin_item">
+        <image class="cai_img" src="{{item.icon}}" />
+        <view class="cai_root2">
+          <view class="cai_title" data-index="{{index}}">{{item.name}}</view>
+          <view class="cai_sell">分类：{{item.fenlei}}</view>
+          <view class="cai_sell">销量：{{item.sell}} </view>
+        </view>
+        <view class='coent_list'>
+          <label class='dingdanbtn' data-id='{{item._id}}' bindtap='changeStatus'>上架</label>
+        </view>
+      </view>
+    </block>
   </view>
   <view wx:if="{{foodList.length==0}}" style="margin-top:90rpx;text-align: center;">
     <label class='none_tab'>数据为空</label>
@@ -52,10 +50,12 @@
 <view wx:if="{{currentTab==2}}" class="caipin">
   <view class="text1">
     <view class="text2">
-    <view>修改菜品信息, 查看全部历史订单, 修改管理员权限等更多操作请前往cms页面操作</view>
-    <view>点击复制以下网址到浏览器打开, 为了获得正常的显示效果, 建议在pc端打开</view>
+      <view>修改菜品信息, 查看全部历史订单, 修改管理员权限等更多操作请前往cms页面操作</view>
+      <view>点击复制以下网址到浏览器打开, 为了获得正常的显示效果, 建议在pc端打开</view>
     </view>
-    <view bindtap="copy" class="copyText"><text selectable="true">https://longyue-1gtb81jtee5f29da-1305814139.tcloudbaseapp.com/wx-cms/#/project/home</text></view>
+    <view bindtap="copy" class="copyText"><text
+        selectable="true">https://longyue-1gtb81jtee5f29da-1305814139.tcloudbaseapp.com/wx-cms/#/project/home</text>
+    </view>
     <view class="text2">注意: 在cms页面操作会直接修改数据库, 请谨慎操作</view>
   </view>
 </view>

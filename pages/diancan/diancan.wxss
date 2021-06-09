@@ -129,7 +129,7 @@ page {
 
 .cai_price {
   display: flex;
-  align-items:center;
+  align-items: center;
   font-weight: bold;
   font-size: 30rpx;
   color: #436f8b;
@@ -255,13 +255,14 @@ page {
   line-height: 28px;
   text-align: center;
   position: fixed;
-  flex-direction:column;
+  flex-direction: column;
   background-color: #124564;
   color: #fff;
 }
-.scroll_cart{
-  height:250px;
-  margin-top:37px;
+
+.scroll_cart {
+  height: 250px;
+  margin-top: 37px;
 }
 
 /*关闭按钮  */
@@ -284,7 +285,7 @@ page {
   vertical-align: middle;
   position: absolute;
   right: 30rpx;
-  font-size:medium;
+  font-size: medium;
 }
 
 /*购物车列表  */
@@ -325,7 +326,7 @@ page {
   justify-content: space-between;
   width: 20%;
   position: absolute;
-  text-align:center;
+  text-align: center;
   left: 60%;
   top: 20rpx;
 }
@@ -337,17 +338,17 @@ page {
   top: 32rpx;
 }
 
-.img1{
+.img1 {
   text-align: center;
 }
 
-.tianChong{
+.tianChong {
   background-color: white;
   height: 100vh;
   width: 100%;
 }
 
-.foodlistFinish{
+.foodlistFinish {
   text-align: center;
   color: gray;
   font-size: 25rpx;

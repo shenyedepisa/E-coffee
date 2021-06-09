@@ -1,10 +1,11 @@
 <!-- 点餐明细 -->
 <view class="mingxi_title">
-<text class="title_text">点餐明细</text> 
-<radio-group bindchange="tapRadio">
-<label  wx:for="{{radioItem}}">
-	<radio color="#436f8b" value="{{item.value}}" class="form_radio" checked="{{item.checked}}">{{item.value}}</radio></label>
-</radio-group>
+	<text class="title_text">点餐明细</text>
+	<radio-group bindchange="tapRadio">
+		<label wx:for="{{radioItem}}">
+			<radio color="#436f8b" value="{{item.value}}" class="form_radio" checked="{{item.checked}}">{{item.value}}</radio>
+		</label>
+	</radio-group>
 </view>
 <scroll-view scroll-y="true" class="scrollMid">
 	<block wx:for="{{cartList}}" wx:key="index">
@@ -19,8 +20,7 @@
 	<view class="base_line_10rpx"></view>
 </scroll-view>
 
-
-<view class="footer_box" >
-	<button  bindtap="submitOrder" class="all_money" size="{{primarySize}}" disabled="{{disabled}}">
+<view class="footer_box">
+	<button bindtap="submitOrder" class="all_money" size="{{primarySize}}" disabled="{{disabled}}">
 		确认付款：{{totalPrice}}元，{{totalNum}}件</button>
 </view>

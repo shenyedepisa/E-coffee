@@ -9,14 +9,14 @@ Page({
     isShowUserName: false,
     userInfo: null,
     isManagerLogin: false,
-    waiter:false,
-    cook:false,
-    manager:false,
+    waiter: false,
+    cook: false,
+    manager: false,
   },
   //获取用户信息
   getUserProfile() {
     wx.getUserProfile({
-      desc: '授权登录', 
+      desc: '授权登录',
       success: (res) => {
         //console.log("获取用户信息成功", res)
         let user = res.userInfo
@@ -53,7 +53,7 @@ Page({
     })
   },
   //跳转
-  goWaiter(){
+  goWaiter() {
     let admin = wx.getStorageSync('admin')
     if (admin && admin.name && admin.password) {
       //校验
@@ -62,7 +62,7 @@ Page({
       })
     }
   },
-  goCook(){
+  goCook() {
     let admin = wx.getStorageSync('admin')
     if (admin && admin.name && admin.password) {
       //校验
@@ -71,7 +71,7 @@ Page({
       })
     }
   },
-  goManager(){
+  goManager() {
     let admin = wx.getStorageSync('admin')
     if (admin && admin.name && admin.password) {
       //校验
@@ -80,7 +80,7 @@ Page({
       })
     }
   },
-  goRevenue(){
+  goRevenue() {
     let admin = wx.getStorageSync('admin')
     if (admin && admin.name && admin.password) {
       //校验
@@ -95,44 +95,44 @@ Page({
     let tempStaff = wx.getStorageSync('admin').staff;
     wx.setStorageSync('admin', null);
     this.setData({
-        isManagerLogin:false,
-        waiter:false,
-        cook:false,
-        manager:false,
-      })
+      isManagerLogin: false,
+      waiter: false,
+      cook: false,
+      manager: false,
+    })
     wx.showToast({
-        icon: 'none',
-        title: '管理员: '+ tempStaff + ' 已退出登录',
-      })
+      icon: 'none',
+      title: '管理员: ' + tempStaff + ' 已退出登录',
+    })
   },
-  
+
   onShow(options) {
     //console.log("admin login")
     let temp1 = wx.getStorageSync('admin');
     let temp2 = wx.getStorageSync('user');
-    if(temp2){
+    if (temp2) {
       this.setData({
         isShowUserName: true,
         userInfo: temp2,
       })
     }
-    if(temp1){
+    if (temp1) {
       this.setData({
-        isManagerLogin:true
+        isManagerLogin: true
       })
-      if(temp1.staff == "经理"){
+      if (temp1.staff == "经理") {
         this.setData({
-          manager:true
+          manager: true
         })
-      }else if(temp1.staff == "后厨"){
+      } else if (temp1.staff == "后厨") {
         this.setData({
-          cook:true
+          cook: true
         })
-      }else if(temp1.staff == "服务员"){
+      } else if (temp1.staff == "服务员") {
         this.setData({
-          waiter:true
+          waiter: true
         })
-      }else{
+      } else {
 
       }
     }

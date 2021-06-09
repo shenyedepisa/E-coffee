@@ -12,6 +12,13 @@ Page({
   },
   //顶部tab切换
   navbarTap: function (e) {
+    wx.showLoading({
+      title: 'Loading',
+      mask: 'true'
+    })
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 700)
     let index = e.currentTarget.dataset.idx;
     this.setData({
       currentTab: index
@@ -34,11 +41,11 @@ Page({
     orderStatus = 0
     this.getMyOrderList();
     let that = this;
-    setInterval(()=>{
+    setInterval(() => {
       that.getMyOrderList();
-    },3000);
+    }, 3000);
   },
-  
+
   getMyOrderList() {
     let openid = app._checkOpenid();
     if (!openid) {
@@ -48,7 +55,7 @@ Page({
     wx.cloud.callFunction({
         name: 'getOrderList',
         data: {
-          action:'admin',
+          action: 'admin',
           orderStatus: orderStatus
         }
       })
@@ -83,7 +90,7 @@ Page({
         this.getMyOrderList()
       } else {
         wx.showToast({
-          mask:true,
+          mask: true,
           icon: 'none',
           title: '提交失败',
         })
@@ -91,14 +98,14 @@ Page({
     }).catch(res => {
       //console.log('制作完成no', res)
       wx.showToast({
-        mask:true,
+        mask: true,
         icon: 'none',
         title: '提交失败',
       })
     })
     let re = db.collection('order').where({
-      _id:id
-    }).get().then((d)=>{ 
+      _id: id
+    }).get().then((d) => {
       //请求成功后
       console.log(d);
       No = d.data[0].NO;
@@ -107,14 +114,14 @@ Page({
       wx.cloud.callFunction({
         name: 'sendNew',
         data: {
-          openid:openid,
-          time:time,
-          No:No
+          openid: openid,
+          time: time,
+          No: No
         }
       }).then(res => {
-        console.log("成功",res)
+        console.log("成功", res)
       }).catch(res => {
-        console.log("失败",res)
+        console.log("失败", res)
       })
     })
   },
@@ -122,39 +129,39 @@ Page({
   onUnload() {
     let pages = getCurrentPages();
     let n = pages.length - 1;
-    if(n>1){
+    if (n > 1) {
       wx.navigateBack({
         delta: n
       })
     }
   },
-    //刷新
-    onRefresh(){
-      //在当前页面显示导航条加载动画
-      wx.showNavigationBarLoading(); 
-      //显示 loading 提示框。需主动调用 wx.hideLoading 才能关闭提示框
-      wx.showLoading({
-        title: '刷新中...',
-        mask:true,
-      })
-      this.getMyOrderList();
-      //网络请求执行完后将执行的动作
-      setTimeout(() => {
-        //隐藏loading 提示框
-        wx.hideLoading();
-        //隐藏导航条加载动画
-        wx.hideNavigationBarLoading();
-        //停止下拉刷新
-        wx.stopPullDownRefresh();
-      }, 1000);
-  
-    },
-  
-    /**
-      * 页面相关事件处理函数--监听用户下拉动作
-    */
-    onPullDownRefresh: function () {
-        //调用刷新时将执行的方法
-      this.onRefresh();
-    }
+  //刷新
+  onRefresh() {
+    //在当前页面显示导航条加载动画
+    wx.showNavigationBarLoading();
+    //显示 loading 提示框。需主动调用 wx.hideLoading 才能关闭提示框
+    wx.showLoading({
+      title: '刷新中...',
+      mask: true,
+    })
+    this.getMyOrderList();
+    //网络请求执行完后将执行的动作
+    setTimeout(() => {
+      //隐藏loading 提示框
+      wx.hideLoading();
+      //隐藏导航条加载动画
+      wx.hideNavigationBarLoading();
+      //停止下拉刷新
+      wx.stopPullDownRefresh();
+    }, 1000);
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    //调用刷新时将执行的方法
+    this.onRefresh();
+  }
 })

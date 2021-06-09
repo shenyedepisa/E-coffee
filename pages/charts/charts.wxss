@@ -1,32 +1,37 @@
-.container{
-  z-index:1;
-  padding-top:80rpx;
-  width:100%;
-  height:600rpx
+.container {
+  z-index: 1;
+  padding-top: 80rpx;
+  width: 100%;
+  height: 600rpx
 }
+
 ec-canvas {
   width: 100%;
   height: 100%;
 }
+
 /* 销量前十 */
-.caipin{
-  margin-top:80rpx;
+.caipin {
+  margin-top: 80rpx;
 }
-.numberNo{
+
+.numberNo {
   width: 140rpx;
   min-width: 100rpx;
   padding-top: 50rpx;
   font-size: 30rpx;
   font-weight: bold;
 }
+
 .caipin_item {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   margin: 0rpx 30rpx;
   padding: 8rpx 30rpx;
   background-color: white;
   border-bottom: 1px gainsboro solid;
 }
+
 .cai_img {
   border-radius: 14rpx;
   width: 140rpx;
@@ -36,7 +41,8 @@ ec-canvas {
   margin-left: 20rpx;
   text-align: center;
 }
-.cai_root2{
+
+.cai_root2 {
   display: flex;
   height: 140rpx;
   display: flex;
@@ -46,34 +52,39 @@ ec-canvas {
   min-width: 0;
   margin-left: 30rpx;
 }
+
 .cai_title {
   font-size: 35rpx;
   width: 500rpx;
-  white-space:nowrap; 
-	text-overflow:ellipsis;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
+
 .cai_sell {
   font-size: 30rpx;
   color: gray;
 }
+
 .cai_price {
   font-weight: bold;
   font-size: 30rpx;
   color: #436f8b;
 }
+
 .navbar {
   z-index: 999;
   height: 80rpx;
   width: 100%;
-  position:fixed;
+  position: fixed;
   top: 0rpx;
   display: flex;
   background: #fff;
 }
 
-.navbarText{
+.navbarText {
   font-size: 30rpx;
 }
+
 .navbar .item {
   /* 默认选中菜单 */
   position: relative;
@@ -103,7 +114,7 @@ ec-canvas {
   height: 4rpx;
 }
 
-.none_tab{
+.none_tab {
   margin-top: 30rpx;
   position: relative;
   top: 20rpx;

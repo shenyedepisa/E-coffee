@@ -29,26 +29,27 @@
 			</view>
 		</view>
 		<view class='dibuttxt'>下单时间:{{item._createTime?filters.formatDate(item._createTime):''}}</view>
-			<!-- //-1订单取消,0新下单待上餐,1待用户评价,2订单已完成 -->
-			<view wx:if="{{item.status!=-1}}">
-				<label wx:if="{{item.status==0}}" class='dingdanbtn' data-orderid='{{item._id}}' bindtap='cancleOrder'>取消订单</label>
-				<label wx:if="{{item.status==0}}" class='dingdanbtn' data-orderid='{{item._id}}' bindtap='addOrder'>再来一单</label>
-				<label wx:if="{{item.status==1}}" class='dingdanbtn' data-orderid='{{item._id}}'bindtap='callService'>
-					<button class="button" open-type="contact">
-						<text class="text1">联系客服</text>
-					</button>
-				</label>
-				<label wx:if="{{item.status==1}}" class='dingdanbtn' data-orderid='{{item._id}}'bindtap='addOrder'>再来一单</label>
-				<label wx:if="{{item.status==2}}" class='dingdanbtn' bindtap='callService'><button class="button" open-type="contact">
-						<text class="text1">申请退款</text>
-					</button>
-				</label>
-				<label wx:if="{{item.status==2}}" class='dingdanbtn' bindtap='addOrder'>再来一单</label>
-			</view>
+		<!-- //-1订单取消,0新下单待上餐,1待用户评价,2订单已完成 -->
+		<view wx:if="{{item.status!=-1}}">
+			<label wx:if="{{item.status==0}}" class='dingdanbtn' data-orderid='{{item._id}}'
+				bindtap='cancleOrder'>取消订单</label>
+			<label wx:if="{{item.status==0}}" class='dingdanbtn' data-orderid='{{item._id}}' bindtap='addOrder'>再来一单</label>
+			<label wx:if="{{item.status==1}}" class='dingdanbtn' data-orderid='{{item._id}}' bindtap='callService'>
+				<button class="button" open-type="contact">
+					<text class="text1">联系客服</text>
+				</button>
+			</label>
+			<label wx:if="{{item.status==1}}" class='dingdanbtn' data-orderid='{{item._id}}' bindtap='addOrder'>再来一单</label>
+			<label wx:if="{{item.status==2}}" class='dingdanbtn' bindtap='callService'><button class="button"
+					open-type="contact">
+					<text class="text1">申请退款</text>
+				</button>
+			</label>
+			<label wx:if="{{item.status==2}}" class='dingdanbtn' bindtap='addOrder'>再来一单</label>
+		</view>
 	</view>
 </view>
 <!-- 否则 -->
 <view wx:else style="margin-top:90rpx;text-align: center;">
 	<label class='none_tab'>数据为空</label>
 </view>
-

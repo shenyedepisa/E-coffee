@@ -1,8 +1,8 @@
 <view class="category_root" bindtap='goToFood'>
 	<view class="category_item">
-		<image  class="category_item_image" src="/image/home02.gif" />
+		<image class="category_item_image" src="/image/home02.gif" />
 		<view class="line_8px"></view>
-		<text class="category_text" >点击屏幕开始点餐</text>
+		<text class="category_text">点击屏幕开始点餐</text>
 	</view>
 	<view class="category_item" />
 </view>

@@ -1,7 +1,8 @@
-page{
+page {
   width: 100%;
-  height: 100%; 
+  height: 100%;
 }
+
 .category_root {
   height: 100%;
   width: 100%;
@@ -21,6 +22,7 @@ page{
   width: 700rpx;
   text-align: center;
 }
-.category_text{
+
+.category_text {
   font-size: 38rpx;
 }

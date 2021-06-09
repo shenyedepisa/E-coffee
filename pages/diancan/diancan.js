@@ -20,13 +20,12 @@ Page({
     heightArr: [] //用来存储右侧每个条目的高度
   },
 
-  onShow(e){
+  onShow(e) {
     this.refresh(e);
   },
-  onLoad(e) {
-  },
+  onLoad(e) {},
 
-  refresh(){
+  refresh() {
     this.getFoodList('getAll')
     let flag = 0;
     let arrNew = [];
@@ -41,12 +40,12 @@ Page({
       }).then(res => {
         let status = res.result.data[0].status;
         // console.log(status);
-        if(status == "下架"){
-          if(flag == 0){
+        if (status == "下架") {
+          if (flag == 0) {
             flag = 1;
             wx.showLoading({
               title: '移除售罄商品...',
-              mask:'true'
+              mask: 'true'
             })
             setTimeout(function () {
               wx.hideLoading();
@@ -61,7 +60,7 @@ Page({
               this.getFoodList('getAll')
             }, 2500);
           }
-        }else{
+        } else {
           arrNew.push({
             _id: item._id,
             name: item.name,
@@ -131,7 +130,7 @@ Page({
     })
   },
 
-  
+
   //减少数量
   minusCount(e) {
     let item = e.currentTarget.dataset.item;
@@ -193,7 +192,7 @@ Page({
   minusCountCart(e) {
     this.minusCount(e);
     let cartList = wx.getStorageSync('cart') || [];
-    if(cartList.length==0){
+    if (cartList.length == 0) {
       this.cascadeDismiss();
     }
   },
@@ -359,7 +358,7 @@ Page({
   },
   // 关闭购物车方法
   cascadeDismiss: function () {
-    if(this.data.cartList.length == 0 &&this.data.maskVisual== "hidden"){
+    if (this.data.cartList.length == 0 && this.data.maskVisual == "hidden") {
       wx.showToast({
         icon: 'none',
         title: 'ヽ(ˋДˊ)ノ别戳啦!\r\n购物车里啥也没有',
@@ -388,7 +387,7 @@ Page({
     var arr = wx.getStorageSync('cart') || [];
     if (!arr || arr.length == 0) {
       wx.showModal({
-        showCancel:false,
+        showCancel: false,
         title: '提示',
         content: '空订单ヽ(ˋДˊ)ノ',
       })
@@ -451,15 +450,15 @@ Page({
       }
     }
   },
-  crollLower(){
+  crollLower() {
     let myArr = this.data.heightArr;
     //console.log("到底了");
     this.setData({
-      leftActiveNum: myArr.length-1
+      leftActiveNum: myArr.length - 1
     });
   },
 
-  crollUpper(){
+  crollUpper() {
     //console.log("到顶了");
     this.setData({
       leftActiveNum: 0

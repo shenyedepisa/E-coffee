@@ -12,7 +12,7 @@
 	<view class='cont_count' wx:for="{{list}}" wx:key="key">
 		<!-- 订单号 -->
 		<view class='dingdanbianhao'>
-			<view>No:{{item.NO}}</view> 
+			<view>No:{{item.NO}}</view>
 			<view class="address">{{item.address}}</view>
 		</view>
 		<!-- 编号 -->
@@ -29,8 +29,8 @@
 			</view>
 			<!-- //-1订单取消,0新下单待上餐,1待用户评价,2订单已完成 -->
 			<view wx:if="{{item.status!=-1}}">
-				<label wx:if="{{item.status==0}}" class='dingdanbtn' data-id='{{item._id}}' data-time='{{filters.formatDate(item._createTime)}}'
-					bindtap='zhizuowancheng'>制作完成</label>
+				<label wx:if="{{item.status==0}}" class='dingdanbtn' data-id='{{item._id}}'
+					data-time='{{filters.formatDate(item._createTime)}}' bindtap='zhizuowancheng'>制作完成</label>
 			</view>
 		</view>
 		<view class='dibuttxt'>下单时间:{{item._createTime?filters.formatDate(item._createTime):''}}</view>

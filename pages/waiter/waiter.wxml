@@ -12,10 +12,10 @@
 	<view class='cont_count' wx:for="{{list}}" wx:key="key">
 
 		<!-- 订单号 -->
-	<view class='dingdanbianhao'>
-		<view>No:{{item.NO}}</view> 
-		<view class="address">{{item.address}}</view>
-	</view>
+		<view class='dingdanbianhao'>
+			<view>No:{{item.NO}}</view>
+			<view class="address">{{item.address}}</view>
+		</view>
 
 		<!-- 编号 -->
 		<view class='dingdanbianhao'>订单编号:{{item._id}} </view>
