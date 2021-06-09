@@ -1,0 +1,126 @@
+/* pages/manager/manager.wxss */
+.navbar {
+  z-index: 999;
+  height: 80rpx;
+  width: 100%;
+  position:fixed;
+  top: 0rpx;
+  display: flex;
+  background: #fff;
+}
+
+.navbarText{
+  font-size: 30rpx;
+}
+.navbar .item {
+  /* 默认选中菜单 */
+  position: relative;
+  flex: auto;
+  font-size: 27rpx;
+  width: 100rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: #333;
+  border-bottom: 6rpx solid #ddd;
+}
+
+.navbar .item.active {
+  /* 选中菜单样式 */
+  color: #333;
+  border-bottom: 6rpx solid #d66058;
+}
+
+.navbar .item.active:after {
+  /* 字体 */
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4rpx;
+}
+
+.caipin{
+  margin-top:80rpx;
+}
+.caipin_item {
+  display: flex;
+  margin: 0rpx 30rpx;
+  padding: 8rpx 30rpx;
+  background-color: white;
+  border-bottom: 1px gainsboro solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+}
+.cai_img {
+  border-radius: 14rpx;
+  width: 140rpx;
+  height: 140rpx;
+  min-height: 140rpx;
+  min-width: 140rpx;
+  text-align: center;
+}
+.cai_root2{
+  display: flex;
+  height: 140rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-width: 0;
+  margin-left: 30rpx;
+}
+.cai_title {
+  font-size: 35rpx;
+  width: 500rpx;
+  white-space:nowrap; 
+	text-overflow:ellipsis;
+}
+.cai_sell {
+  font-size: 30rpx;
+  color: gray;
+}
+.cai_price {
+  font-weight: bold;
+  font-size: 30rpx;
+  color: #436f8b;
+}
+
+.dingdanbtn {
+  flex: 2;
+  color: darkgoldenrod;
+  margin: 10rpx 30rpx;
+  margin-right: 0rpx;
+  width: 180rpx;
+  height: 56rpx;
+  text-align: center;
+  border: 1rpx solid darkgoldenrod;
+  font-size: 30rpx;
+  display: inline-block;
+  line-height: 56rpx;
+}
+
+.text1{
+  margin: 0rpx 30rpx;
+}
+
+.text2{
+  padding: 30rpx 0rpx;
+}
+
+.copyText{
+  padding: 15rpx;
+  border-bottom: 2rpx solid gray;
+  border-top: 2rpx solid gray;
+}
+
+.none_tab {
+  position: relative;
+  top: 20rpx;
+  color: #999;
+  font-size: 32rpx;
+}

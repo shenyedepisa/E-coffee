@@ -1,3 +1,0 @@
-<!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
-<button bindtap="getUserProfile">授权登录</button>

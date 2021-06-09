@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/diancan/diancan",
+    "pages/pay/pay",
+    "pages/myOrder/myOrder",
+    "pages/mine/mine",
+    "pages/admin/admin",
+    "pages/cook/cook",
+    "pages/waiter/waiter",
+    "pages/manager/manager",
+    "pages/charts/charts"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#124564",
+    "navigationBarTitleText": "Ecoffee",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#124564",
+    "selectedColor": "#124564",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "image/zhuye_on.png",
+        "iconPath": "image/zhuye_close.png",
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "image/dingdan_on.png",
+        "iconPath": "image/dingdan_close.png",
+        "pagePath": "pages/myOrder/myOrder",
+        "text": "订单"
+      },
+      {
+        "selectedIconPath": "image/wode_on.png",
+        "iconPath": "image/wode_close.png",
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

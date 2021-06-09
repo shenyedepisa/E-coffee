@@ -1,0 +1,45 @@
+<!--pages/me/me.wxml-->
+<view class='line_15px' />
+<view class="header" wx:if="{{isShowUserName}}">
+	<image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+	<text class="userinfo-nickname">{{userInfo.realname?userInfo.realname:userInfo.nickName}}</text>
+	<text class="tuichu" catchtap="tuichu">退出登录</text>
+</view>
+<!--如果用户没有授权，显示登陆按钮  -->
+<view wx:if="{{!isShowUserName}}" class="btn-login">
+	<button  bindtap="getUserProfile">授权登陆</button>
+</view>
+
+<view class='line_15px' />
+<view wx:if="{{isShowUserName}}" />
+
+<!-- 管理员管理订单 -->
+<view wx:if="{{!isManagerLogin}}" class='my_item' bindtap="goAdmin">
+	<text class="textLine">管理员登录</text>
+	<view class='right_arrow' />
+</view>
+
+<view wx:if="{{manager}}" class='my_item' bindtap="goRevenue">
+	<text class="textLine">营收</text>
+	<view class='right_arrow' />
+</view>
+
+<view wx:if="{{manager}}" class='my_item' bindtap="goManager">
+	<text class="textLine">菜品管理</text>
+	<view class='right_arrow' />
+</view>
+
+<view wx:if="{{waiter|manager}}" class='my_item' bindtap="goWaiter">
+	<text class="textLine">订单状态管理（前台）</text>
+	<view class='right_arrow' />
+</view>
+
+<view wx:if="{{cook|manager}}" class='my_item' bindtap="goCook">
+	<text class="textLine">订单状态管理（后厨）</text>
+	<view class='right_arrow' />
+</view>
+
+<view wx:if="{{isManagerLogin}}" class='my_item' bindtap="quitAdmin">
+	<text class="textLine">管理员退出登录</text>
+	<view class='right_arrow' />
+</view>

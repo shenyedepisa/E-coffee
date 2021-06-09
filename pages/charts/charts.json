@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "营收情况",
+  "usingComponents": {
+    "ec-canvas": "../../components/ec-canvas/ec-canvas"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "backgroundColor": "#eeeeee"
+}

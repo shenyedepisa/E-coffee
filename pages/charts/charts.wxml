@@ -1,0 +1,27 @@
+<view class="navbar">
+	<view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique"
+		bindtap="navbarTap">
+		<text class="navbarText">{{item}}</text>
+	</view>
+</view>
+<view wx:if="{{currentTab==1}}" class='container'>
+    <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+</view>
+<!-- 销量前十 -->
+<view wx:if="{{goodList&&goodList.length>0 && currentTab == 0}}"  class="caipin">
+    <block wx:for="{{goodList}}" wx:key="index">
+        <view class="caipin_item" >
+            <view class="numberNo" >No. {{index+1}}</view>
+            <image class="cai_img" src="{{item.icon}}" />
+            <view class="cai_root2">
+                <view class="cai_title" data-index="{{index}}">{{item.name}}</view>
+                <view class="cai_sell">销量：{{item.sell}} </view>
+                <view class="cai_price" data-index="{{index}}">销售额：￥{{item.sell*item.price}}</view>
+            </view>
+        </view>
+    </block>
+    <view class="line_15px"></view>
+</view>
+<view wx:if="{{(!goodList||goodList.length==0) && currentTab == 0}}"  class="caipin">
+<view class="none_tab">数据为空</view>
+</view>

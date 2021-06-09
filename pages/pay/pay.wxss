@@ -1,0 +1,81 @@
+.base_color {
+  float: right;
+  color: #124564;
+}
+.base_item{
+  width: auto;
+  height: auto;
+  float: left;
+  left: 20%;
+}
+
+.base_line_10rpx {
+  width: 100%;
+  height: 10rpx;
+  background: #d9d9d9;
+}
+
+.form_radio{
+  transform:scale(0.8);
+}
+
+.title_text{
+  padding-top: 3rpx;
+}
+/* 订单明细 */
+.mingxi_title {
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 20rpx;
+  font-size: 40rpx;
+  border-bottom: 2px solid gainsboro;
+}
+
+.mingxi_item {
+  display: flex;
+  padding: 20rpx;
+  margin-left: 20rpx;
+  padding-left: 50rpx;
+  margin-right: 20rpx;
+  padding-right: 50rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid gainsboro;
+  font-size: 30rpx;
+}
+
+/* 总价 */
+.zongjia {
+  color: #124564;
+  text-align: right;
+  font-size: 40rpx;
+  padding: 10rpx 30rpx;
+}
+
+/*提交订单按钮 */
+.footer_box {
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+  left: 0;
+  bottom: 0rpx;
+  z-index: 100;
+  background-color: #fff;
+}
+
+/*总计金额、件数  */
+.all_money {
+  width: 90%;
+  margin: 0 auto;
+  height: 84rpx;
+  line-height: 84rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+  background-color: #124564;
+  border-radius: 20rpx;
+}
+
+.scrollMid{
+  height: 80vh;
+}

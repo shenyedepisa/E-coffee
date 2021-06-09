@@ -1,0 +1,59 @@
+page {
+  background: #ffffff;
+}
+
+.container {
+  width: 80%;
+  margin: 4%;
+  background: white;
+  border: 20px solid white;
+  border-radius: 98rpx;
+}
+
+.line_1px {
+  background-color: white;
+}
+.textBottom5px{
+  margin-bottom: 5px;
+}
+.item_root {
+  background: #ffffff;
+  padding: 8px 10px;
+}
+
+.textarea25px {
+  width: 100%;
+  height: 30px;
+  border: 2px solid #124564;
+  border-radius: 99rpx;
+  padding: 3rpx;
+  padding-left: 30rpx;
+}
+
+/*按钮 */
+.btn_fabu {
+  width: 60%;
+  height: 40px;
+  border: 1px solid gray;
+  margin-top: 40rpx;
+  align-items: center;
+  vertical-align: middle;
+  text-align: top;
+  line-height: 36px;
+  border-radius: 95rpx;
+}
+
+.tab {
+  display: flex;
+  /* 左右居中 */
+  justify-content: center;
+  margin-top: 80rpx;
+}
+
+.tabNum {
+  background: #124564;
+  color: white;
+  padding: 40rpx;
+  font-size: 1.4rem;
+  border-radius: 40rpx;
+}
