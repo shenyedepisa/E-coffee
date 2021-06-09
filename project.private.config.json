@@ -1,4 +1,5 @@
 {
+  "setting": {},
   "condition": {
     "plugin": {
       "list": []
@@ -12,14 +13,71 @@
     "miniprogram": {
       "list": [
         {
-          "id": -1,
-          "name": "db guide",
-          "pathName": "pages/databaseGuide/databaseGuide",
-          "query": ""
+          "name": "myOrder",
+          "pathName": "pages/myOrder/myOrder",
+          "query": "",
+          "scene": null
         },
         {
-          "name": "pages/Chome/Chome",
-          "pathName": "pages/Chome/Chome",
+          "name": "pay",
+          "pathName": "pages/pay/pay",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 5,
+          "name": "admin",
+          "pathName": "pages/admin/admin",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "mine",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "cook",
+          "pathName": "pages/cook/cook",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "diancan",
+          "pathName": "pages/diancan/diancan",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "charts",
+          "pathName": "pages/charts/charts",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "home",
+          "pathName": "pages/home/home",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "manager",
+          "pathName": "pages/manager/manager",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "charts",
+          "pathName": "pages/charts/charts",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "waiter",
+          "pathName": "pages/waiter/waiter",
+          "query": "",
           "scene": null
         }
       ]
