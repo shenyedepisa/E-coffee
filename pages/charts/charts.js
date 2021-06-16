@@ -1,5 +1,6 @@
 import * as echarts from '../../components/ec-canvas/echarts.js'
 let chart = null;
+let intervalID = 0;
 var option = {
   color: ['#37a2da', '#32c5e9', '#67e0e3'],
   tooltip: {
@@ -143,7 +144,7 @@ Page({
   onShow() {
     this.getHotGood() //获取热门菜品
     let that = this;
-    setInterval(() => {
+    intervalID = setInterval(() => {
       that.getHotGood()
     }, 3000);
   },
@@ -169,7 +170,9 @@ Page({
     }, 1000);
 
   },
-
+  onUnload(){
+    clearInterval(intervalID);
+  },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */

@@ -5,6 +5,7 @@ const db = wx.cloud.database({});
 let windowHeight = 0
 Page({
   data: {
+    isClicked: false,
     cartList: [], // 购物车
     totalPrice: 0, // 总价，初始为0
     totalNum: 0, //总数，初始为0
@@ -424,10 +425,23 @@ Page({
 
   //点击左侧栏目
   leftClickFn(e) {
-    this.setData({
-      leftActiveNum: e.target.dataset.myid,
-      Tab: e.target.dataset.myid
-    })
+    console.log(this.data.isClicked);  
+    let that = this;
+    if(this.data.isClicked==false){
+      this.setData({
+        isClicked:true
+      });
+      this.setData({
+        leftActiveNum: e.target.dataset.myid,
+        Tab: e.target.dataset.myid
+      });
+      setTimeout(function () {
+        that.setData({
+            isClicked: false
+        })
+      }, 400);
+    }
+
     //console.log('左左左左')
   },
   //右侧滚动时触发这个事件

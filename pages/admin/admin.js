@@ -1,22 +1,25 @@
 const app = getApp()
-let name = ""
-let password = ""
 const db = wx.cloud.database()
 Page({
   data: {
-    
+    name:"",
+    password:""
   },
  
   //管理员登陆相关
   getName: function (e) {
-    name = e.detail.value
+    this.setData({
+      name:e.detail.value
+    })
   },
 
   getPassWord: function (e) {
-    password = e.detail.value
+    this.setData({
+      password:e.detail.value
+    })
   },
   formSubmit: function () {
-    if (name == '' || name == undefined) {
+    if (this.data.name == '' || this.data.password == undefined) {
       wx.showToast({
         mask:true,
         title: '用户名不能为空',
@@ -25,7 +28,7 @@ Page({
       })
       return;
     }
-    if (password == '' || password == undefined) {
+    if (this.data.password == '' || this.data.password == undefined) {
       wx.showToast({
         mask:true,
         title: '密码不能为空',
@@ -34,12 +37,12 @@ Page({
       })
       return;
     }
-    this.login(name, password)
+    this.login(this.data.name, this.data.password)
 
   },
   //登录
   login(name, password) {
-    //console.log(name,password)
+    console.log(name,password)
     db.collection('admin').where({
         name: name,
         password: password

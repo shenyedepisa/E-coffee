@@ -10,7 +10,7 @@
     bindscrolltoupper="crollUpper" lower-threshold="200" upper-threshold="100" class="right"
     scroll-into-view="top{{Tab}}" style="height:100vh">
     <view wx:for="{{menuArr}}" wx:key="index" id="top{{item.id}}" class="scroll-view-item rightblock">
-      <view class="title">{{item.title}}</view>
+      <view class="title">{{item.title}}</view> 
       <block wx:for="{{item.list}}" wx:key="index">
         <view class="caipin_item">
           <image class="cai_img" src="{{item.icon}}" />

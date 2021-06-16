@@ -1,4 +1,5 @@
-var app = getApp()
+var app = getApp();
+let intervalID = 0;
 let orderStatus = 0; //0新下单待制作，1订单已完成，2待评价
 let db = wx.cloud.database();
 
@@ -41,7 +42,7 @@ Page({
     orderStatus = 0
     this.getMyOrderList();
     let that = this;
-    setInterval(() => {
+    intervalID = setInterval(() => {
       that.getMyOrderList();
     }, 3000);
   },
@@ -127,6 +128,7 @@ Page({
   },
 
   onUnload() {
+    clearInterval(intervalID);
     let pages = getCurrentPages();
     let n = pages.length - 1;
     if (n > 1) {

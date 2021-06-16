@@ -1,4 +1,5 @@
 var app = getApp()
+let intervalID = 0;
 let orderStatus = 0; //-1订单取消,0待制作,1待取餐 2已完成
 let db = wx.cloud.database();
 Page({
@@ -40,9 +41,12 @@ Page({
     this.getMyOrderList();
     //console.log("nooooo:  "+orderStatus)
     let that = this;
-    setInterval(() => {
+    intervalID = setInterval(() => {
       that.getMyOrderList();
     }, 3000);
+  },
+  onUnload: function () {
+    clearInterval(intervalID);
   },
 
   //加菜

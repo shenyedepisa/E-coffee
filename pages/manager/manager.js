@@ -1,4 +1,5 @@
 let a = "";
+let intervalID = 0;
 // pages/manager/manager.js
 Page({
   /**
@@ -34,6 +35,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
+    clearInterval(intervalID);
     let pages = getCurrentPages();
     let n = pages.length - 1;
     if (n > 1) {
@@ -124,7 +126,7 @@ Page({
   onLoad: function (options) {
     this.getList(this.data.currentTab);
     let that = this;
-    setInterval(() => {
+    intervalID = setInterval(() => {
       that.getList(that.data.currentTab);
     }, 3000);
   },

@@ -94,13 +94,12 @@ page {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  word-wrap: normal;
   word-wrap: break-word;
   word-break: break-all;
 }
 
 .cai_sell {
-  margin-top: 6rpx;
+  height: 34rpx;
   font-size: 30rpx;
   color: gray;
 }
@@ -297,7 +296,7 @@ page {
 }
 
 .cells_name {
-  width: 40%;
+  width: 50%;
   height: 50%;
   position: absolute;
   top: 0;
