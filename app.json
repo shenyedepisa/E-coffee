@@ -9,7 +9,8 @@
     "pages/cook/cook",
     "pages/waiter/waiter",
     "pages/manager/manager",
-    "pages/charts/charts"
+    "pages/charts/charts",
+    "pages/testpage/testpage"
   ],
   "window": {
     "backgroundTextStyle": "light",

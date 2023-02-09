@@ -49,7 +49,6 @@ Page({
       }).get()
       .then(res => {
         if (res.data && res.data.length > 0) {
-          //console.log("登陆成功", res)
           let admin = {
             name: name,
             password: password,
@@ -70,7 +69,7 @@ Page({
             })
           }
         } else {
-          //console.log("登陆失败", res)
+          console.log("登陆失败", res)
           wx.showToast({
             mask:true,
             icon: 'none',

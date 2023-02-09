@@ -82,6 +82,7 @@ Page({
             db.collection("order")
               .count()
               .then(res => {
+                console.log("查看", res);
                 db.collection("order").add({
                   data: {
                     NO: res.total,

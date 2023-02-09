@@ -3,9 +3,11 @@ let admin = ""
 let name = ""
 let password = ""
 const db = wx.cloud.database()
+const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
 Page({
   // 页面的初始数据
   data: {
+    avatarUrl: defaultAvatarUrl,
     isShowUserName: false,
     userInfo: null,
     isManagerLogin: false,
@@ -18,19 +20,25 @@ Page({
     wx.getUserProfile({
       desc: '授权登录',
       success: (res) => {
-        //console.log("获取用户信息成功", res)
+        console.log("获取用户信息成功", res)
         let user = res.userInfo
         this.setData({
           isShowUserName: true,
           userInfo: user,
         })
-        //console.log("userInfo",user);
+        console.log("userInfo",user);
         user.openid = app.globalData.openid;
         app._saveUserInfo(user);
       },
       fail: res => {
-        //console.log("获取用户信息失败", res)
+        console.log("获取用户信息失败", res)
       }
+    })
+  },
+  onChooseAvatar(e) {
+    const { avatarUrl } = e.detail 
+    this.setData({
+      avatarUrl,
     })
   },
   //退出登录

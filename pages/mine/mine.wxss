@@ -20,19 +20,36 @@ page {
 .tuichu {
   color: gray;
   padding: 20rpx;
-  font-size: 30rpx;
+  font-size: 28rpx;
+  margin-top: 50rpx;
+  margin-bottom: 20rpx;
 }
 
 .userinfo-avatar {
+  border: 0;
+  margin:0;
+  width: 158rpx;
+  height: 158rpx;
+}
+.avatar {
+  border: 0;
+  margin:0;
+  padding: 0;
   border-radius: 158rpx;
   width: 158rpx;
   height: 158rpx;
-  margin-block-start: 18rpx;
+  margin-block-start: 26rpx;
+}
+.avatar::after{
+  border: 0;
+  margin:0;
+  padding: 0;
 }
 
 .userinfo-nickname {
   margin-top: 20rpx;
   font-size: 42rpx;
+  text-align: center;
 }
 
 .textLine {

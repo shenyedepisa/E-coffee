@@ -79,6 +79,12 @@
           "pathName": "pages/waiter/waiter",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/testpage/testpage",
+          "pathName": "pages/testpage/testpage",
+          "query": "",
+          "scene": null
         }
       ]
     }

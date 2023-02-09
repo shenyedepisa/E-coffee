@@ -28,6 +28,7 @@ Page({
 
   refresh() {
     this.getFoodList('getAll')
+    // console.log("test")
     let flag = 0;
     let arrNew = [];
     let arr = wx.getStorageSync('cart') || [];
@@ -40,7 +41,7 @@ Page({
         }
       }).then(res => {
         let status = res.result.data[0].status;
-        // console.log(status);
+        console.log(status);
         if (status == "下架") {
           if (flag == 0) {
             flag = 1;
@@ -85,7 +86,7 @@ Page({
       }
     }).then(res => {
       let dataList = res.result.data;
-      // console.log("菜品数据", res)
+      console.log("菜品数据", res)
       //遍历1,并把购物车购买数量填充进来
       dataList.forEach(food => {
         food.quantity = 0;

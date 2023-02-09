@@ -11,7 +11,9 @@
 	<!-- 外层 -->
 	<view class='cont_count' wx:for="{{list}}" wx:key="key">
 		<!-- 订单号 -->
-		<view class='dingdanhao'>No.{{item.NO}}</view>
+		<view class='dingdanhao'>No.{{item.NO}}
+			<text class="mingxi_price"> {{item.address}}</text>
+		</view>
 		<!-- 编号 -->
 		<view class='dingdanbianhao'>订单编号:{{item._id}} </view>
 
@@ -25,7 +27,7 @@
 						<text class="mingxi_price"> ￥{{arr_item.price}}</text>
 					</view>
 				</block>
-				<view class='zongjia'>总价:{{item.totalPrice}}元</view>
+				<view class='zongjia'>总价: {{item.totalPrice}}元</view>
 			</view>
 		</view>
 		<view class='dibuttxt'>下单时间:{{item._createTime?filters.formatDate(item._createTime):''}}</view>
@@ -33,19 +35,19 @@
 		<view wx:if="{{item.status!=-1}}">
 			<label wx:if="{{item.status==0}}" class='dingdanbtn' data-orderid='{{item._id}}'
 				bindtap='cancleOrder'>取消订单</label>
-			<label wx:if="{{item.status==0}}" class='dingdanbtn' data-orderid='{{item._id}}' bindtap='addOrder'>再来一单</label>
+			<label wx:if="{{item.status==0}}" class='dingdanbtn' data-orderid='{{item._id}}' bindtap='addOrder'>继续点餐</label>
 			<label wx:if="{{item.status==1}}" class='dingdanbtn' data-orderid='{{item._id}}' bindtap='callService'>
 				<button class="button" open-type="contact">
 					<text class="text1">联系客服</text>
 				</button>
 			</label>
-			<label wx:if="{{item.status==1}}" class='dingdanbtn' data-orderid='{{item._id}}' bindtap='addOrder'>再来一单</label>
+			<label wx:if="{{item.status==1}}" class='dingdanbtn' data-orderid='{{item._id}}' bindtap='addOrder'>继续点餐</label>
 			<label wx:if="{{item.status==2}}" class='dingdanbtn' bindtap='callService'><button class="button"
 					open-type="contact">
 					<text class="text1">申请退款</text>
 				</button>
 			</label>
-			<label wx:if="{{item.status==2}}" class='dingdanbtn' bindtap='addOrder'>再来一单</label>
+			<label wx:if="{{item.status==2}}" class='dingdanbtn' bindtap='addOrder'>继续点餐</label>
 		</view>
 	</view>
 </view>

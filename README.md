@@ -1,4 +1,10 @@
 ### 主线开发
+---
+appid:wx12500060ce0cfb1c
+云环境:e-coffee-5gimeyvl52ab6b71
+cms:https://e-coffee-5gimeyvl52ab6b71-1316795209.tcloudbaseapp.com/wx-cms/#/home
+
+---
 版本1.0.0
 alpha测试版,用户点餐功能流程基本完成
 版本1.0.1-1.0.9

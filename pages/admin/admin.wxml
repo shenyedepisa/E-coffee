@@ -3,7 +3,7 @@
 	<view class='line_1px' />
 	<view class='item_root'>
 		<view class="textBottom5px">账号：</view> 
-		<input class="textarea25px" confirm-type="done" bindinput="getName" value="{{username}}" maxlength='10' />
+		<input class="textarea25px" confirm-type="done" bindinput="getName" value="{{username}}" maxlength='20' />
 	</view>
 	<view class='line_1px' />
 	<view class='item_root'>

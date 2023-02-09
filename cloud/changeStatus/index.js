@@ -9,6 +9,7 @@ cloud.init({
 // 云函数入口函数
 exports.main = async (event, context) => {
   console.log(event.action)
+  console.log("菜品数据")
   if(event.action == 'onSale'){
     return await cloud.database().collection('food').doc(event.id)
     .update({

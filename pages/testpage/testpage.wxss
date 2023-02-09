@@ -1,0 +1,19 @@
+/* pages/testpage/testpage.wxss */
+.b {
+  border: 0;
+  margin:0;
+  padding:0;
+  border-radius: 158rpx;
+  width: 158rpx;
+  height: 158rpx;
+}
+.b::after{
+  border: 0;
+  margin:0;
+  padding:0;
+}
+.avatar {
+  border-radius: 158rpx;
+  width: 158rpx;
+  height: 158rpx;
+}

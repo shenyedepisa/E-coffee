@@ -1,8 +1,11 @@
-<!--pages/me/me.wxml-->
 <view class='line_15px' />
 <view class="header" wx:if="{{isShowUserName}}">
-	<image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
-	<text class="userinfo-nickname">{{userInfo.realname?userInfo.realname:userInfo.nickName}}</text>
+	<!-- <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image> -->
+	<button class="avatar" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+		<image class="userinfo-avatar" src="{{avatarUrl}}"></image>
+	</button> 
+	<input type="nickname" class="userinfo-nickname" placeholder="请输入昵称"/>
+	<!-- <text class="userinfo-nickname">{{userInfo.realname?userInfo.realname:userInfo.nickName}}</text> -->
 	<text class="tuichu" catchtap="tuichu">退出登录</text>
 </view>
 <!--如果用户没有授权，显示登陆按钮  -->
