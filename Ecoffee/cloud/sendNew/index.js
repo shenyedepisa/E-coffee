@@ -9,13 +9,13 @@ exports.main = async (event, context) => {
     const result = await cloud.openapi.subscribeMessage.send({
       touser: event.openid,
       lang: 'zh_CN',
-      templateId: '9Bhch4xuwY9s_cN3yhZ_KvxfaOr4983pzJp_YknQ-tA',
+      templateId: 'S4UGsNlEH8QsVRlMiDo4WTKqiKC65C-1Rtts2vgGd1I',
       miniprogramState: 'developer',
       data: {
         character_string1: {
           value: event.No
         },
-        time16: {
+        time6: {
           value: event.time
         },
         thing2: {

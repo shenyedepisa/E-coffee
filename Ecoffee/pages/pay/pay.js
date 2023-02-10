@@ -67,7 +67,7 @@ Page({
       mask: true
     })
     wx.requestSubscribeMessage({
-      tmplIds: ['9Bhch4xuwY9s_cN3yhZ_KvxfaOr4983pzJp_YknQ-tA'],
+      tmplIds: ['S4UGsNlEH8QsVRlMiDo4WTKqiKC65C-1Rtts2vgGd1I'],
       success(res) {
         console.log("消息模板", res);
         let arrNew = [];

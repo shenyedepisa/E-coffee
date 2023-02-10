@@ -112,6 +112,7 @@ Page({
       No = d.data[0].NO;
       openid = d.data[0]._openid;
       console.log(time)
+      // console.log("发送消息")
       wx.cloud.callFunction({
         name: 'sendNew',
         data: {
