@@ -54,7 +54,7 @@
       <view>点击复制以下网址到浏览器打开, 为了获得正常的显示效果, 建议在pc端打开</view>
     </view>
     <view bindtap="copy" class="copyText"><text
-        selectable="true">https://coffee-4gbt2i18209372a8-1305814139.tcloudbaseapp.com/wx-cms/#/home</text>
+        selectable="true">https://e-coffee-5gimeyvl52ab6b71-1316795209.tcloudbaseapp.com/wx-cms/#/home</text>
     </view>
     <view class="text2">注意: 在cms页面操作会直接修改数据库, 请谨慎操作</view>
   </view>
